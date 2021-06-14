@@ -1,0 +1,7 @@
+out/
+kotlin_lombok_gradle/build/
+.gradle
+.idea
+build/
+target/
+*.iml
