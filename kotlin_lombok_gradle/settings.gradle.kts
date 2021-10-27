@@ -9,7 +9,7 @@ pluginManagement {
 }
 
 
-rootProject.name = "koblin_lombok_gradle"
+rootProject.name = "kotlin_lombok_gradle"
 
 include("nokapt")
 include("yeskapt")
