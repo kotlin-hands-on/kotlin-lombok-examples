@@ -1,10 +1,12 @@
 plugins {
     java
+    application
     kotlin("jvm")
     kotlin("kapt")
 
-    id("io.freefair.lombok") version "5.3.0"
-    id("org.jetbrains.kotlin.plugin.lombok") version "1.5.20-RC"
+    id("io.freefair.lombok") version "8.14.2"
+    id("org.jetbrains.kotlin.plugin.lombok") version "2.2.0"
+    id("com.google.devtools.ksp").version("2.2.0-2.0.2")
 }
 
 kapt {
@@ -16,7 +18,22 @@ kotlinLombok {
 }
 
 dependencies {
-    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
-    kapt("com.google.dagger:dagger-compiler:2.33")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
+    kapt("com.google.dagger:dagger-compiler:2.57")
+}
+
+// Tasks to run main functions in Java and Kotlin usages
+tasks.register<JavaExec>("runJavaUsage") {
+    group = "application"
+    description = "Runs the Java main: examples.withkapt.JavaUsage"
+    mainClass.set("examples.withkapt.JavaUsage")
+    classpath = sourceSets.main.get().runtimeClasspath
+}
+
+tasks.register<JavaExec>("runKotlinUsage") {
+    group = "application"
+    description = "Runs the Kotlin main: examples.withkapt.KotlinUsageKt"
+    mainClass.set("examples.withkapt.KotlinUsageKt")
+    classpath = sourceSets.main.get().runtimeClasspath
 }
