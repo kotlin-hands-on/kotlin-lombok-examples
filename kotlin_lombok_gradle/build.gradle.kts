@@ -1,7 +1,14 @@
 plugins {
     java
-    kotlin("jvm") version "1.5.20-RC"
+    kotlin("jvm") version "2.2.0"
 }
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
@@ -9,14 +16,4 @@ version = "1.0-SNAPSHOT"
 dependencies {
     implementation(kotlin("stdlib"))
     testImplementation("junit", "junit", "4.12")
-}
-
-allprojects {
-    repositories {
-        mavenCentral()
-        mavenLocal()
-        maven {
-            url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
-        }
-    }
 }
