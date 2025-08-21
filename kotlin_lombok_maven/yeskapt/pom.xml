@@ -14,9 +14,9 @@
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
 
-        <kotlin.version>1.5.20-RC</kotlin.version>
-        <moshi.version>1.12.0</moshi.version>
-        <lombok.version>1.18.20</lombok.version>
+        <kotlin.version>2.2.0</kotlin.version>
+        <moshi.version>1.15.2</moshi.version>
+        <lombok.version>1.18.38</lombok.version>
     </properties>
 
     <repositories>
@@ -93,7 +93,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.14.0</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
